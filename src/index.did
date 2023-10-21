@@ -1,0 +1,8 @@
+service: () -> {
+    createRoom: (text) -> (record {id:text; author:text; posts:vec text; roomname:text});
+    createUser: (text, bool) -> (record {id:text; isCreator:bool; username:text});
+    getAllRooms: () -> (vec record {id:text; author:text; posts:vec text; roomname:text}) query;
+    getAllUsers: () -> (vec record {id:text; isCreator:bool; username:text}) query;
+    getRoom: (text) -> (opt record {id:text; author:text; posts:vec text; roomname:text}) query;
+    getUser: (text) -> (opt record {id:text; isCreator:bool; username:text}) query;
+}
